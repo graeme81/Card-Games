@@ -1,11 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <TextView
-        android:text="This is the Blackjack Page"
-        android:layout_width="match_parent"
+        android:text="Dealers Hand Will Appear Here"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:id="@+id/dHand"
+        android:layout_weight="0.16"
+        android:layout_x="82dp"
+        android:layout_y="66dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Deal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
-</LinearLayout>
+        android:layout_below="@+id/dHand"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:id="@+id/btnDeal"
+        android:onClick="onDealButtonPressed"/>
+
+
+    <Button
+        android:text="Hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pHand"
+        android:layout_toLeftOf="@+id/btnDeal"
+        android:layout_toStartOf="@+id/btnDeal"
+        android:layout_marginBottom="41dp"
+        android:id="@+id/btnHit"
+        android:onClick="onHitButtonPressed"/>
+
+    <Button
+        android:text="Stay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnHit"
+        android:layout_toRightOf="@+id/btnDeal"
+        android:layout_toEndOf="@+id/btnDeal"
+        android:id="@+id/btnStay"
+        android:onClick="onStayButtonPressed"/>
+
+    <TextView
+        android:text="Player Hand Will Appear Here"
+        android:layout_width="380dp"
+        android:id="@+id/pHand"
+        android:layout_weight="0.16"
+        android:layout_x="0dp"
+        android:layout_y="406dp"
+        android:layout_marginBottom="125dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/dHand"
+        android:layout_alignStart="@+id/dHand" />
+
+    <TextView
+        android:text="Player Count"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/pCount"
+        android:layout_alignTop="@+id/pHand"
+        android:layout_toRightOf="@+id/pHand"
+        android:layout_toEndOf="@+id/pHand"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp" />
+
+    <TextView
+        android:text="Dealer Count"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
+        android:id="@+id/dCount"
+        android:layout_alignBottom="@+id/dHand"
+        android:layout_alignLeft="@+id/pCount"
+        android:layout_alignStart="@+id/pCount" />
+
+
+</RelativeLayout>

@@ -14,18 +14,25 @@ public class MenuActivity extends AppCompatActivity {
 
     Button blackJackButton;
     Intent intent;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+        name = extras.getString("name");
+
         blackJackButton = (Button) findViewById(R.id.btnBlackJack);
 
     }
 
     public void onBlackJackButtonPressed(View Button){
+
         intent = new Intent(MenuActivity.this, BlackJackActivity.class);
+        intent.putExtra("name",name);
 
         startActivity(intent);
     }
