@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+
     <TextView
         android:text="Dealers Hand Will Appear Here"
         android:layout_width="380dp"
@@ -17,29 +18,9 @@
         android:layout_marginStart="70dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="25sp" />
 
-    <Button
-        android:text="Deal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dHand"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:id="@+id/btnDeal"
-        android:onClick="onDealButtonPressed"/>
-
-
-    <Button
-        android:text="Hit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pHand"
-        android:layout_toLeftOf="@+id/btnDeal"
-        android:layout_toStartOf="@+id/btnDeal"
-        android:layout_marginBottom="41dp"
-        android:id="@+id/btnHit"
-        android:onClick="onHitButtonPressed"/>
 
     <Button
         android:text="Stay"
@@ -49,7 +30,114 @@
         android:layout_toRightOf="@+id/btnDeal"
         android:layout_toEndOf="@+id/btnDeal"
         android:id="@+id/btnStay"
-        android:onClick="onStayButtonPressed"/>
+        android:onClick="onStayButtonPressed"
+        android:height="70dp"
+        android:width="120dp"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:text=""
+        android:textStyle="bold"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/pCount"
+        android:layout_alignTop="@+id/pHand"
+        android:layout_toRightOf="@+id/pHand"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:text=""
+        android:textStyle="bold"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
+        android:id="@+id/dCount"
+        android:layout_alignBottom="@+id/dHand"
+        android:layout_alignLeft="@+id/pCount"
+        android:layout_alignStart="@+id/pCount"
+        android:textSize="30sp" />
+
+    <TextView
+        android:text="Dealer Wins"
+        android:textSize="30sp"
+        android:textAlignment="textStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDealerCount"
+        android:height="40dp"
+        android:width="230dp"
+        android:layout_alignBaseline="@+id/txtPlayerCount"
+        android:layout_alignBottom="@+id/txtPlayerCount"
+        android:layout_alignLeft="@+id/btnStay"
+        android:layout_alignStart="@+id/btnStay" />
+
+    <TextView
+        android:text="Player Wins"
+        android:textSize="30sp"
+        android:textAlignment="textEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="51dp"
+        android:id="@+id/txtPlayerCount"
+        android:height="40dp"
+        android:width="230dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/btnHit"
+        android:layout_alignEnd="@+id/btnHit" />
+
+    <Button
+        android:text="Deal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDeal"
+        android:onClick="onDealButtonPressed"
+        android:height="70dp"
+        android:width="120dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/dHand"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Result"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtResult"
+        android:height = "70dp"
+        android:width = "450dp"
+        android:layout_above="@+id/pCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="51dp" />
+
+    <Button
+        android:text="Hit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnHit"
+        android:onClick="onHitButtonPressed"
+        android:height="70dp"
+        android:width="120dp"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/txtResult"
+        android:layout_toLeftOf="@+id/btnDeal"
+        android:layout_toStartOf="@+id/btnDeal"
+        android:layout_marginBottom="29dp" />
+
+    <TextView
+        android:text="players cards"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnHit"
+        android:layout_alignLeft="@+id/txtResult"
+        android:layout_alignStart="@+id/txtResult"
+        android:id="@+id/txtPlayer"
+        android:height="50dp"
+        android:width="200sp"/>
 
     <TextView
         android:text="Player Hand Will Appear Here"
@@ -58,33 +146,12 @@
         android:layout_weight="0.16"
         android:layout_x="0dp"
         android:layout_y="406dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginBottom="22dp"
         android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
+        android:textSize="25sp"
+        android:layout_above="@+id/txtDealerCount"
         android:layout_alignLeft="@+id/dHand"
         android:layout_alignStart="@+id/dHand" />
-
-    <TextView
-        android:text="Player Count"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:id="@+id/pCount"
-        android:layout_alignTop="@+id/pHand"
-        android:layout_toRightOf="@+id/pHand"
-        android:layout_toEndOf="@+id/pHand"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp" />
-
-    <TextView
-        android:text="Dealer Count"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="21dp"
-        android:id="@+id/dCount"
-        android:layout_alignBottom="@+id/dHand"
-        android:layout_alignLeft="@+id/pCount"
-        android:layout_alignStart="@+id/pCount" />
 
 
 </RelativeLayout>
