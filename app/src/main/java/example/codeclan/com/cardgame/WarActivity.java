@@ -150,6 +150,7 @@ public class WarActivity extends AppCompatActivity {
 
                 winner.setVisibility(View.INVISIBLE);
 
+
             }
 
 
