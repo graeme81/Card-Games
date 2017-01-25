@@ -16,13 +16,9 @@ public class Player {
         this.hand = new ArrayList<Card>();
     }
 
-    public void takeCard(Card card){
-        hand.add(card);
-    }
-
-    public Card getCard(int i){
-        return hand.get(i);
-    }
+    public void takeCard(Card card){hand.add(card);}
+    public Card getCard(int i){return hand.get(i);}
+    public Card playCard(){return hand.remove(0);}
 
     public void clearHand(){ hand.clear();}
     public String getName(){return name;}

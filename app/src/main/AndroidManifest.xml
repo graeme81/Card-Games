@@ -30,6 +30,20 @@
         <activity android:name=".BlackJackActivity"
             android:label="BlackJack"
             android:parentActivityName=".MenuActivity">
+
+        </activity>
+
+        <activity
+            android:name=".WarActivity"
+            android:label="War"
+            android:parentActivityName=".MenuActivity">
+        </activity>
+
+        <activity
+            android:name=".FiveStudActivity"
+            android:label="Poker"
+            android:parentActivityName=".MenuActivity">
+
         </activity>
 
 

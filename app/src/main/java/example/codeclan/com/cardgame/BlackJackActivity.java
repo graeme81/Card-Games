@@ -3,6 +3,7 @@ package example.codeclan.com.cardgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,9 +25,10 @@ public class BlackJackActivity extends AppCompatActivity{
     TextView playerHand;
     TextView playerCount;
     TextView result;
-    TextView dw;
-    TextView pw;
+    TextView dw; // dealer wins text at bottom
+    TextView pw; // player wins text at bottom
     TextView playerHeading;
+
     Button dealButton;
     Button hitButton;
     Button stayButton;
@@ -64,16 +66,12 @@ public class BlackJackActivity extends AppCompatActivity{
         String name = extras.getString("name");
 
         final Deck deck = new Deck(4);
-        Card card;
         final Player dealer = new Player("Dealer");
         final Player player = new Player(name);
         final Score number = new Score(0);
-        //int total1 = 0, total2 = 0;
-        boolean playerTurn, dealerTurn;
 
         final ArrayList<Player> players = new ArrayList<>();
         final Dealer deals = new Dealer();
-        boolean winner = false;
 
         deck.shuffle();
 
@@ -134,9 +132,6 @@ public class BlackJackActivity extends AppCompatActivity{
 
                 int num = getCount(player);
                 int aces = countAces(player);
-//                for(int i = 0; i < player.getHandSize(); i++){
-//                    num = num + number.getScore(player.getCard(i).getValue().ordinal()+1);
-//                }
 
                 while(num > 21 && aces !=0){
                     num = num -10;
@@ -174,9 +169,7 @@ public class BlackJackActivity extends AppCompatActivity{
 
                 int num = getCount(dealer);
                 int aces = countAces(dealer);
-//                for(int i = 0; i < dealer.getHandSize(); i++){
-//                    num = num + number.getScore(dealer.getCard(i).getValue().ordinal()+1);
-//                }
+//      two aces would be 22
                 while(num > 21 && aces !=0){
                     num = num -10;
                     aces --;
@@ -194,9 +187,7 @@ public class BlackJackActivity extends AppCompatActivity{
 
                     num = getCount(dealer);
                     aces = countAces(dealer);
-//                    for(int i = 0; i < dealer.getHandSize(); i++){
-//                        num = num + number.getScore(dealer.getCard(i).getValue().ordinal()+1);
-//                    }
+
                     while(num > 21 && aces !=0){
                         num = num -10;
                         aces --;
@@ -241,8 +232,12 @@ public class BlackJackActivity extends AppCompatActivity{
            }
         });
 
+    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        return true;
     }
 
 

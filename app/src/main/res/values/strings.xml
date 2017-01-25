@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">CardGame</string>
+    <string name="war">War</string>
+    <string name="blackjack">BlackJack</string>
+    <string name="poker">5 Stud Poker</string>
+    <string name="player_deck">player deck</string>
+    <string name="player_card">player card</string>
+    <string name="dealer_deck">dealer deck</string>
+    <string name="dealer_card">dealer card</string>
+    <string name="restart">Restart</string>
+    <string name="deal">deal</string>
 </resources>

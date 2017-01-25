@@ -61,7 +61,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:text="Dealer Wins"
+        android:text="Dealer Wins: 0"
         android:textSize="30sp"
         android:textAlignment="textStart"
         android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
         android:layout_alignStart="@+id/btnStay" />
 
     <TextView
-        android:text="Player Wins"
+        android:text="Player Wins: 0"
         android:textSize="30sp"
         android:textAlignment="textEnd"
         android:layout_width="wrap_content"
